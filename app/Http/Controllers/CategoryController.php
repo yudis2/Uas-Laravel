@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+// disini sudah ada yang diminta oleh error
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class CategoryController extends Controller
 
     public function index()
     {
+        // error warning disini
         $categories = Category::all();
         return view('category.index', compact('categories'));
     }
