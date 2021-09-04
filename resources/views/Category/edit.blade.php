@@ -10,7 +10,7 @@
                         'CategoryController@update', $category ->id]]) !!}
                     <div class="form-group">
                         {!!Form::label('name', 'Category Name') !!}
-                        {!!Form::label('name', null
+                        {!!Form::text('name', null,
                         ['class'=>'form-control','placeholder'=>'Category Name', 'required']) !!}
                     </div>
                     <div class="box-footer clearfix">

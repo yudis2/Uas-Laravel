@@ -7,7 +7,7 @@
                 <div class="card-header">Create Category</div>
                 <div class="card-body">
                     {!! Form::model($category = new
-                    \App\Category,['url'=>'/category']) !!}
+                    \App\Models\Category,['url'=>'/category']) !!}
                     <div class="form-group">
                         {!!Form::label('name', 'Category Name') !!}
                         {!!Form::text('name', null,

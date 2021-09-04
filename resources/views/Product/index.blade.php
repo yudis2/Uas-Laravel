@@ -5,7 +5,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="card card-default">
                 <div class="card-header">Product <span class="float-right">
-                    <a href="/category/create" class="btn btn-sm-btn-primary">Tambah Data</a>
+                    <a href="/product/create" class="btn btn-sm-btn-primary">Tambah Data</a>
                 </span>
                 </div>
                 <div class="card-body">
@@ -23,7 +23,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($categories as $category)
+                            @forelse ($products as $product)
                             <tr>
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
@@ -33,8 +33,8 @@
                                 <td>{{$product->category->name}}</td>
                                 <td><img src="/{{$product->picture}}" alt="" height="50"></td>
                                 <td>
-                                    <a href="/product/{{product->id}}" class="btn btn-sm btn-success">Show</a>
-                                    <a href="/product/{{product->id}}/edit" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="/product/{{$product->id}}" class="btn btn-sm btn-success">Show</a>
+                                    <a href="/product/{{$product->id}}/edit" class="btn btn-sm btn-warning">Edit</a>
                                     {{ Form::open(array('url' => 'product/' . $product->id, 'class' => 'float-right')) }}
                                     {{ Form::hidden('_method', 'DELETE') }}
                                     {{ Form::submit('Delete', array('class' => 'btn btn-sm- btn-danger btn-submit')) }}

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +23,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('category', 'App\Http\Controllers\CategoryController');
-Route::resource('product', 'App\Http\Controllers\ProductController');
+// mengikuti modul => CategoryController not found
+// saya ubah sedikit jadi error App\Category not found
+Route::resource('category', CategoryController::class);
+// Route::post('category', CategoryController::class);
+Route::resource('product', ProductController::class);

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 // disini sudah ada yang diminta oleh error
-use App\Category;
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -17,12 +18,12 @@ class CategoryController extends Controller
     {
         // error warning disini
         $categories = Category::all();
-        return view('category.index', compact('categories'));
+        return view('Category.index', compact('categories'));
     }
 
     public function create()
     {
-        return view('category.create');
+        return view('Category.create');
     }
 
 
@@ -34,12 +35,12 @@ class CategoryController extends Controller
 
     public function show(Category $category)
     {
-        return view('category.show', compact('category'));
+        return view('Category.show', compact('category'));
     }
 
     public function edit(Category $category)
     {
-        return view('category.edit', compact('category'));
+        return view('Category.edit', compact('category'));
     }
 
 

@@ -6,7 +6,8 @@
             <div class="card card-default">
                 <div class="card-header">Edit Product</div>
                 <div class="card-body">
-                    {!! Form::model($product,['method'=> 'PATCH', 'action' => ['ProductController@update', $product->id] ,'files'=>true]) !!}
+                    {!! Form::model($product =['method'=> 'PATCH', 'action' => [
+                        'ProductController@update', $product->id] ,'files'=>true]) !!}
 
                     <div class="form-group">
                         {!!Form::label('name', 'Product Name') !!}
@@ -16,7 +17,7 @@
 
                     <div class="form-group">
                         {!!Form::label('category_id', 'Category Name') !!}
-                        {!!Form::select('category_id', null,
+                        {!!Form::select('category_id', $categories, null,
                         ['class'=>'form-control']) !!}
                     </div>
 
@@ -51,7 +52,7 @@
 
                     <div class="form-group">
                         {!!Form::label('picture', 'gambar') !!}
-                        {!!Form::file(,'picture', null,
+                        {!!Form::file('picture', null,
                         ['class'=>'form-control','placeholder'=>'gambar', 'required']) !!}
                     </div>
 

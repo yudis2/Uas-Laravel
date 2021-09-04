@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +25,6 @@ class Product extends Model
     }
     public function category()
     {
-        return $this->belongsTo('App\Category')->select('name', 'id');
+        return $this->belongsTo('App\Models\Category')->select('name', 'id');
     }
 }

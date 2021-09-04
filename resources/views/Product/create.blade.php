@@ -6,7 +6,7 @@
             <div class="card card-default">
                 <div class="card-header">Create Product</div>
                 <div class="card-body">
-                    {!! Form::model($product = new \App\Product,['url'=>'/product','files'->true]) !!}
+                    {!! Form::model($product = new \App\Models\Product,['url'=>'/product']) !!}
 
                     <div class="form-group">
                         {!!Form::label('name', 'Product Name') !!}
@@ -16,7 +16,7 @@
 
                     <div class="form-group">
                         {!!Form::label('category_id', 'Category Name') !!}
-                        {!!Form::select('category_id', null,
+                        {!!Form::select('category_id', $categories, null,
                         ['class'=>'form-control']) !!}
                     </div>
 
@@ -51,12 +51,12 @@
 
                     <div class="form-group">
                         {!!Form::label('picture', 'gambar') !!}
-                        {!!Form::file(,'picture', null,
-                        ['class'=>'form-control','placeholder'=>'gambar', 'required']) !!}
+                        {!!Form::file('picture', null,
+                        ['required','class'=>'form-control','placeholder'=>'gambar']) !!}
                     </div>
 
                     <div class="box-footer clearfix">
-                        {!! Form::submit('Save', ["class"=>"pull-right btn btn-primary"]) !!}
+                        <button type="submit" class="pull-right btn btn-primary">Save</button>
                     </div>
                     {!! Form::close() !!}
                 </div>

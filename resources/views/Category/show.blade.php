@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8 col-md-offset-2">
             <div class="card card-default">
-                <div class="card-header">Edit Category</div>
+                <div class="card-header">{{ $category->name }} </div>
                 <div class="card-body">
                    <table class="table">
                        <thead>
@@ -19,15 +19,15 @@
                            </tr>
                        </thead>
                        <tbody>
-                           @forelse ($category->product as $product )
+                           @forelse ($category->product as $category )
                            <tr>
-                               <td>{{$product->id}}</td>
-                               <td>{{$product->name}}</td>
-                               <td>{{$product->barcode}}</td>
-                               <td>{{$prouct->stock}}</td>
-                               <td>{{$prouct->unit}}</td>
-                               <td>{{$prouct->category->name}}</td>
-                               <td><img src="/{{$prouct->picture}}" alt="" height="50"></td>
+                               <td>{{$category->id}}</td>
+                               <td>{{$category->name}}</td>
+                               <td>{{$category->barcode}}</td>
+                               <td>{{$category->stock}}</td>
+                               <td>{{$category->unit}}</td>
+                               <td>{{$category->category->name}}</td>
+                               <td><img src="/{{$category->picture}}" alt="" height="50"></td>
                            </tr>
                            @empty
                            <tr>

@@ -23,8 +23,8 @@
                                 <td>{{$category->id}}</td>
                                 <td>{{$category->name}}</td>
                                 <td>
-                                    <a href="/category/{{category->id}}" class="btn btn-sm btn-success">Show</a>
-                                    <a href="/category/{{category->id}}/edit" class="btn btn-sm btn-warning">Edit</a>
+                                    <a href="/category/{{$category->id}}" class="btn btn-sm btn-success">Show</a>
+                                    <a href="/category/{{$category->id}}/edit" class="btn btn-sm btn-warning">Edit</a>
                                     {{ Form::open(array('url' => 'category/' . $category->id, 'class' => 'float-right')) }}
                                     {{ Form::hidden('_method', 'DELETE') }}
                                     {{ Form::submit('Delete', array('class' => 'btn btn-sm- btn-danger btn-submit')) }}
