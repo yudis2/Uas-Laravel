@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+// use DateTimeInterface;
 
 class User extends Authenticatable
 {
@@ -22,6 +23,13 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+
+    // protected function serializeDate(DateTimeInterface $date) {
+
+    //     return $date->format('d-m-Y H:i:s');
+
+    // }
+
 
     /**
      * The attributes that should be hidden for serialization.

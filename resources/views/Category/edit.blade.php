@@ -6,17 +6,22 @@
             <div class="card card-default">
                 <div class="card-header">Edit Category</div>
                 <div class="card-body">
-                    {!! Form::model($category = ['method' => 'PATCH','action' => [
-                        'CategoryController@update', $category ->id]]) !!}
-                    <div class="form-group">
-                        {!!Form::label('name', 'Category Name') !!}
-                        {!!Form::text('name', null,
-                        ['class'=>'form-control','placeholder'=>'Category Name', 'required']) !!}
-                    </div>
-                    <div class="box-footer clearfix">
-                        {!! Form::submit('Save', ["class"=>"pull-right btn btn-primary"]) !!}
-                    </div>
-                    {!! Form::close() !!}
+                    <form action="{{ route('category.update',$category->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+
+                         <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Category Name:</strong>
+                                    <input type="text" name="name" value="{{ $category->name }}" class="form-control" placeholder="Category Name">
+                                </div>
+                            </div>
+                            <div class="box-footer clearfix">
+                              <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

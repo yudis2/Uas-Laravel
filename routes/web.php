@@ -26,5 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // mengikuti modul => CategoryController not found
 // saya ubah sedikit jadi error App\Category not found
 Route::resource('category', CategoryController::class);
-// Route::post('category', CategoryController::class);
 Route::resource('product', ProductController::class);
