@@ -6,7 +6,7 @@
             <div class="card card-default">
                 <div class="card-header">Create Product</div>
                 <div class="card-body">
-                    {!! Form::model($product = new \App\Models\Product,['url'=>'/product']) !!}
+                    {!! Form::model($product = new \App\Models\Product,['url'=>'/product','files'=>true]) !!}
 
                     <div class="form-group">
                         {!!Form::label('name', 'Product Name') !!}
